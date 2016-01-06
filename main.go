@@ -2,15 +2,18 @@ package main
 
 import (
 	"fmt"
-	a "github.com/skrassiev/packagea"
-	b "github.com/skrassiev/packageb"
-	c "github.com/skrassiev/packagec"
+	"github.com/skrassiev/packagea"
+	"github.com/skrassiev/packageb"
+	"github.com/skrassiev/packagec"
+	"io/ioutil"
 )
 
 func main() {
+	fmt.Println("main: packagea.A ==", packagea.A)
 	fmt.Println("main.main()")
-	fmt.Println("main: a.A ==", a.A)
-	fmt.Println("main: a.Inc() ==", a.Inc())
-	fmt.Println("main: b.B ==", b.B)
-	fmt.Println("main: c.C ==", c.C)
+	fmt.Println("main: package.Inc() ==", packagea.Inc())
+	fmt.Println("main: packageb.B ==", packageb.B)
+	fmt.Println("main: packagec.C ==", packagec.Caap)
+	packagec.IncC()
+	fmt.Println(ioutil.Discard)
 }
